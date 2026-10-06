@@ -54,7 +54,7 @@ test-b2b: $(BUILD)/test_b2b | $(REPORTS)
 
 # Static analysis of the generated SWC (report only, does not fail the build).
 static: | $(REPORTS)
-	cppcheck --enable=warning,style,performance,portability --std=c99 \
+	cppcheck --enable=warning,style,performance,portability --std=c99 --check-level=exhaustive \
 	  --inline-suppr --xml --xml-version=2 \
 	  -I$(PLAT_DIR) -I$(SWC_DIR) -I$(RTE_DIR) \
 	  $(SWC_DIR)/AEB_Core_SWC.c 2> $(REPORTS)/cppcheck.xml
