@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'AEB_Core_SWC'.
  *
- * Model version                  : 1.1
+ * Model version                  : 1.2
  * Simulink Coder version         : 25.2 (R2025b) 28-Jul-2025
- * C/C++ source code generated on : Tue Oct  6 14:57:20 2026
+ * C/C++ source code generated on : Tue Oct  6 17:07:29 2026
  *
  * Target selection: autosar.tlc
  * Embedded hardware selection: Intel->x86-64 (Windows64)
@@ -39,6 +39,14 @@ void AEB_Core_SWC_Step(void)
   sint32 tmp;
   uint8 rtb_FCWactivate;
   boolean rtb_AND;
+  boolean rtb_Compare;
+
+  /* RelationalOperator: '<S2>/Compare' incorporates:
+   *  Constant: '<S2>/Constant'
+   *  Inport: '<Root>/LeadLatOffset'
+   */
+  rtb_Compare = (Rte_IRead_AEB_Core_SWC_Step_LeadLatOffset_LeadLatOffset() >
+                 -3.1);
 
   /* Sum: '<S4>/Sum' incorporates:
    *  Constant: '<S4>/const1'
@@ -217,11 +225,8 @@ void AEB_Core_SWC_Step(void)
 
   /* Switch: '<Root>/Check the lane' incorporates:
    *  Constant: '<Root>/Constant'
-   *  Constant: '<S2>/Constant'
-   *  Inport: '<Root>/LeadLatOffset'
-   *  RelationalOperator: '<S2>/Compare'
    */
-  if (Rte_IRead_AEB_Core_SWC_Step_LeadLatOffset_LeadLatOffset() > -3.1) {
+  if (rtb_Compare) {
     tmp = rtb_FCWactivate;
   } else {
     tmp = 0;
@@ -232,11 +237,20 @@ void AEB_Core_SWC_Step(void)
    */
   Rte_IWrite_AEB_Core_SWC_Step_AEBTrigger_AEBTrigger(tmp);
 
-  /* Outport: '<Root>/Deceleration' incorporates:
+  /* Switch: '<Root>/Check the lane (decel)' incorporates:
+   *  Constant: '<Root>/Constant'
    *  Gain: '<Root>/Gain'
    */
-  Rte_IWrite_AEB_Core_SWC_Step_Deceleration_Deceleration
-    (-AEB_Core_SWC_ARID_DEF.decel);
+  if (rtb_Compare) {
+    u0 = -AEB_Core_SWC_ARID_DEF.decel;
+  } else {
+    u0 = 0.0;
+  }
+
+  /* Outport: '<Root>/Deceleration' incorporates:
+   *  Switch: '<Root>/Check the lane (decel)'
+   */
+  Rte_IWrite_AEB_Core_SWC_Step_Deceleration_Deceleration(u0);
 }
 
 /* Model initialize function */

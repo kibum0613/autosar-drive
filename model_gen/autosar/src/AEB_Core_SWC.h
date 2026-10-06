@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'AEB_Core_SWC'.
  *
- * Model version                  : 1.1
+ * Model version                  : 1.2
  * Simulink Coder version         : 25.2 (R2025b) 28-Jul-2025
- * C/C++ source code generated on : Tue Oct  6 14:57:20 2026
+ * C/C++ source code generated on : Tue Oct  6 17:07:29 2026
  *
  * Target selection: autosar.tlc
  * Embedded hardware selection: Intel->x86-64 (Windows64)

@@ -21,7 +21,7 @@ model_gen/autosar/arxml/    component / datatype / implementation / interface AR
 model_gen/autosar/rte_stub/ Simulink가 만든 RTE 헤더 스텁
 platform/                   호스트 빌드용 최소 Platform_Types / Std_Types / Compiler 헤더
 test/rte_test_double.c      RTE 역할을 대신하는 테스트 더블 (IRead 값 주입, IWrite 값 기록)
-test/test_swc_unit.c        요구사항 기반 단위 테스트 10개
+test/test_swc_unit.c        요구사항 기반 단위 테스트 11개
 test/test_b2b.c             ERT 코드 vs AUTOSAR 코드 Back-to-Back 테스트 6개
 docs/requirements.md        요구사항 ↔ 테스트 추적표
 jenkins/                    gcc·cppcheck가 들어간 Jenkins 이미지
@@ -49,8 +49,9 @@ http://localhost:8080 에서 Pipeline 잡을 만들고 "Pipeline script from SCM
 
 - 빌드: 경고 0 (-Werror)
 - cppcheck(warning, style, performance, portability): 지적 0
-- 단위 테스트: 10개 중 9 PASS, 1 XFAIL(AEB-12)
-- Back-to-Back: 6개 시나리오 최대 오차 0
+- 단위 테스트: 11개 중 10 PASS, 1 XFAIL(AEB-13, 끼어들기 시 FCW 없이 제동)
+- Back-to-Back: 5개 시나리오 최대 오차 0 + 인접 차로 시나리오는 AEB-12 의도 차이 확인
+- 테스트로 찾은 AEB-12(인접 차로 선행차에 감속 명령)는 모델 수정 → 코드 재생성 → CI 재검증으로 닫았습니다 (docs/requirements.md)
 
 ## 범위와 한계
 

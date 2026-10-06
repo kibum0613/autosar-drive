@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 Auto generated XML Component Description for model AEB_Core_SWC
-Model version                : 1.1
+Model version                : 1.2
 Simulink Coder version       : Simulink Coder 25.2 (R2025b) 28-Jul-2025
-XML source code generated on : Tue Oct 06 14:57:29 2026
-Model Checksum               : 3592363927 1264700273 2376944755 529925103
+XML source code generated on : Tue Oct 06 17:07:38 2026
+Model Checksum               : 646894827 2852000462 222986189 1328096570
 -->
 <AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00052.xsd">
     <AR-PACKAGES>
@@ -15,7 +15,7 @@ Model Checksum               : 3592363927 1264700273 2376944755 529925103
                 <AR-PACKAGE>
                     <SHORT-NAME>SwcImplementations</SHORT-NAME>
                     <ELEMENTS>
-                        <SWC-IMPLEMENTATION UUID="cb4a794e-997b-5f3f-95f8-ef0800711011">
+                        <SWC-IMPLEMENTATION UUID="f2f39118-43c0-515f-7fd4-ea04918ec78e">
                             <SHORT-NAME>AEB_Core_SWC_Impl</SHORT-NAME>
                             <CODE-DESCRIPTORS>
                                 <CODE>
@@ -44,7 +44,7 @@ Model Checksum               : 3592363927 1264700273 2376944755 529925103
                             <RESOURCE-CONSUMPTION>
                                 <SHORT-NAME>RsrcCons_AEB_Core_SWC</SHORT-NAME>
                             </RESOURCE-CONSUMPTION>
-                            <SW-VERSION>1.1.1</SW-VERSION>
+                            <SW-VERSION>1.2.1</SW-VERSION>
                             <USED-CODE-GENERATOR>Embedded Coder 25.2 (R2025b) 28-Jul-2025</USED-CODE-GENERATOR>
                             <VENDOR-ID>0</VENDOR-ID>
                             <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/Components/AEB_Core_SWC/AEB_Core_SWC_IB</BEHAVIOR-REF>

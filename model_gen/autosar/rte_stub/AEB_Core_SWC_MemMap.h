@@ -7,4 +7,4 @@
    This file is generated for:
    Atomic software component:  "AEB_Core_SWC"
    ARXML schema: "R23-11"
-   File generated on: "Tue Oct 06 14:57:26 2026"  */
+   File generated on: "Tue Oct 06 17:07:35 2026"  */

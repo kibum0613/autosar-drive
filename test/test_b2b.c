@@ -4,7 +4,12 @@
  *
  * ERT inputs are raw positions (Pose_lead, s_ego, v_ego). The redesign moved
  * the subtraction to the radar side, so the harness feeds the SWC with
- * RelDistance = x_lead - s_ego and RelVelocity = v_lead - v_ego. */
+ * RelDistance = x_lead - s_ego and RelVelocity = v_lead - v_ego.
+ *
+ * Intended difference (Jira AEB-12 / REQ-09): the SWC now also gates
+ * Deceleration with the lane check, the ERT baseline does not. When the lead
+ * is outside the ego lane (y <= -3.1 m) the SWC must output 0 deceleration;
+ * AEBTrigger must still match the baseline exactly. */
 #include <math.h>
 #include <string.h>
 #include "AEB.h"
@@ -13,6 +18,7 @@
 #include "mini_junit.h"
 
 #define DT 0.01
+#define LANE_LIMIT (-3.1)   /* lane check threshold [m] */
 
 typedef struct {
   double leadX, leadY, leadV, leadA;  /* lead start state, accel [m/s2]  */
@@ -54,7 +60,11 @@ static void b2b_run(void)
     rte_in.EgoVelocity = egoV;
     AEB_Core_SWC_Step();
 
-    d1 = fabs(AEB_Y.Deceleration - rte_out.Deceleration);
+    if (sc->leadY > LANE_LIMIT) {
+      d1 = fabs(AEB_Y.Deceleration - rte_out.Deceleration);
+    } else {
+      d1 = fabs(rte_out.Deceleration);           /* REQ-09: must be 0 */
+    }
     d2 = fabs(AEB_Y.AEBTrigger - rte_out.AEBTrigger);
     if (d1 > maxDiff) maxDiff = d1;
     if (d2 > maxDiff) maxDiff = d2;
@@ -85,7 +95,7 @@ static const char *NAMES[] = {
   "B2B lead brakes -4 m/s2",
   "B2B equal speed",
   "B2B lead pulls away",
-  "B2B adjacent-lane lead",
+  "B2B adjacent-lane lead (trigger equal, SWC decel 0 per AEB-12)",
   "B2B late detection 25 m @ 20 m/s",
 };
 

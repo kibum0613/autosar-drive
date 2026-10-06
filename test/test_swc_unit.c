@@ -175,6 +175,28 @@ static void t_every_step_writes_both_ports(void)
   MJ_CHECK(rte_out.writeCount == 100U, "IWrite count %u, expected 100", rte_out.writeCount);
 }
 
+/* REQ-11 : lead cuts in from the adjacent lane. The driver must still get an
+ * FCW before the SWC brakes (same intent as REQ-03). */
+static void t_cut_in_fcw_before_braking(void)
+{
+  double egoX = 0.0, egoV = 25.0, leadX = 150.0;
+  int k, fcwSeen = 0;
+  fresh_ecu();
+  for (k = 0; k < 1000; k++) {
+    double lat = (k * DT < 3.0) ? -3.5 : 0.0;   /* cut-in at t = 3 s */
+    step(leadX - egoX, lat, -egoV, egoV);
+    if (rte_out.AEBTrigger != 0.0 && rte_out.Deceleration == 0.0) fcwSeen = 1;
+    if (rte_out.Deceleration < 0.0) {
+      MJ_CHECK(fcwSeen, "cut-in at t=3.00 s: braking %.1f m/s2 at t=%.2f s with no FCW first",
+               -rte_out.Deceleration, k * DT);
+      break;
+    }
+    egoV += rte_out.Deceleration * DT;
+    if (egoV < 0.0) egoV = 0.0;
+    egoX += egoV * DT;
+  }
+}
+
 int main(int argc, char **argv)
 {
   mj_run("REQ-01 no action when TTC > FCW time", t_no_action_when_far, 0, 0);
@@ -185,7 +207,8 @@ int main(int argc, char **argv)
   mj_run("REQ-06 release after standstill", t_release_after_stop, 0, 0);
   mj_run("REQ-07 FCW hysteresis 1.2x", t_fcw_hysteresis, 0, 0);
   mj_run("REQ-08 no trigger for adjacent-lane lead", t_no_trigger_adjacent_lane, 0, 0);
-  mj_run("REQ-09 no deceleration for adjacent-lane lead", t_no_decel_adjacent_lane, 1, "AEB-12");
+  mj_run("REQ-09 no deceleration for adjacent-lane lead", t_no_decel_adjacent_lane, 0, 0);
   mj_run("REQ-10 runnable writes both output ports every period", t_every_step_writes_both_ports, 0, 0);
+  mj_run("REQ-11 cut-in: FCW comes before braking", t_cut_in_fcw_before_braking, 1, "AEB-13");
   return mj_finish("AEB_Core_SWC.unit", argc > 1 ? argv[1] : NULL) ? 1 : 0;
 }

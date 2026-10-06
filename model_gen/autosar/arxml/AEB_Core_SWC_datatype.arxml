@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 Auto generated XML Component Description for model AEB_Core_SWC
-Model version                : 1.1
+Model version                : 1.2
 Simulink Coder version       : Simulink Coder 25.2 (R2025b) 28-Jul-2025
-XML source code generated on : Tue Oct 06 14:57:29 2026
-Model Checksum               : 3592363927 1264700273 2376944755 529925103
+XML source code generated on : Tue Oct 06 17:07:38 2026
+Model Checksum               : 646894827 2852000462 222986189 1328096570
 -->
 <AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00052.xsd">
     <AR-PACKAGES>
         <AR-PACKAGE>
             <SHORT-NAME>DataTypes</SHORT-NAME>
             <ELEMENTS>
-                <IMPLEMENTATION-DATA-TYPE UUID="af890b3d-1b86-5ad1-2454-c40d13de0069">
+                <IMPLEMENTATION-DATA-TYPE UUID="43398d2b-3cc2-5e75-5f4a-a939f51f6b73">
                     <SHORT-NAME>float64</SHORT-NAME>
                     <CATEGORY>VALUE</CATEGORY>
                     <SW-DATA-DEF-PROPS>
@@ -27,15 +27,15 @@ Model Checksum               : 3592363927 1264700273 2376944755 529925103
                 <AR-PACKAGE>
                     <SHORT-NAME>SwAddrMethods</SHORT-NAME>
                     <ELEMENTS>
-                        <SW-ADDR-METHOD UUID="1f44b452-d6e0-5886-b1f8-62299d7ae6fe">
+                        <SW-ADDR-METHOD UUID="5299ab06-fa75-53e2-80e8-cc653fce97aa">
                             <SHORT-NAME>CODE</SHORT-NAME>
                             <SECTION-TYPE>CODE</SECTION-TYPE>
                         </SW-ADDR-METHOD>
-                        <SW-ADDR-METHOD UUID="703c65e2-325a-51e8-b16e-5f6a5f2bb786">
+                        <SW-ADDR-METHOD UUID="d56c9043-4568-5636-90bc-77e117f996fe">
                             <SHORT-NAME>CONST</SHORT-NAME>
                             <SECTION-TYPE>CONST</SECTION-TYPE>
                         </SW-ADDR-METHOD>
-                        <SW-ADDR-METHOD UUID="5a8077c4-a55b-5fd2-6f39-dd7c09286661">
+                        <SW-ADDR-METHOD UUID="dbe89e5f-a5f2-540a-cc69-0dcc3d39841e">
                             <SHORT-NAME>VAR</SHORT-NAME>
                             <SECTION-INITIALIZATION-POLICY>INIT</SECTION-INITIALIZATION-POLICY>
                             <SECTION-TYPE>VAR</SECTION-TYPE>
@@ -45,7 +45,7 @@ Model Checksum               : 3592363927 1264700273 2376944755 529925103
                 <AR-PACKAGE>
                     <SHORT-NAME>SwBaseTypes</SHORT-NAME>
                     <ELEMENTS>
-                        <SW-BASE-TYPE UUID="47048ed0-4fb5-5081-0547-7af4be5b298c">
+                        <SW-BASE-TYPE UUID="56ac7a7a-5698-5479-b9f5-151d04b123b4">
                             <SHORT-NAME>float64</SHORT-NAME>
                             <CATEGORY>FIXED_LENGTH</CATEGORY>
                             <BASE-TYPE-SIZE>64</BASE-TYPE-SIZE>

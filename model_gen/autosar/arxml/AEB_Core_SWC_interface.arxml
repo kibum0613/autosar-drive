@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 Auto generated XML Component Description for model AEB_Core_SWC
-Model version                : 1.1
+Model version                : 1.2
 Simulink Coder version       : Simulink Coder 25.2 (R2025b) 28-Jul-2025
-XML source code generated on : Tue Oct 06 14:57:29 2026
-Model Checksum               : 3592363927 1264700273 2376944755 529925103
+XML source code generated on : Tue Oct 06 17:07:38 2026
+Model Checksum               : 646894827 2852000462 222986189 1328096570
 -->
 <AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00052.xsd">
     <AR-PACKAGES>
         <AR-PACKAGE>
             <SHORT-NAME>Interfaces</SHORT-NAME>
             <ELEMENTS>
-                <SENDER-RECEIVER-INTERFACE UUID="37168a61-f8d9-545c-e2ff-287374a95690">
+                <SENDER-RECEIVER-INTERFACE UUID="75bda4af-0664-5f34-f8d3-e45337281b4a">
                     <SHORT-NAME>RelDistance</SHORT-NAME>
                     <IS-SERVICE>false</IS-SERVICE>
                     <DATA-ELEMENTS>
-                        <VARIABLE-DATA-PROTOTYPE UUID="c0d3e7be-0114-5dd6-6220-bfd5e0a174bc">
+                        <VARIABLE-DATA-PROTOTYPE UUID="9333e87c-a3d2-55f5-cab5-54b27b38f884">
                             <SHORT-NAME>RelDistance</SHORT-NAME>
                             <CATEGORY>VALUE</CATEGORY>
                             <SW-DATA-DEF-PROPS>
@@ -30,11 +30,11 @@ Model Checksum               : 3592363927 1264700273 2376944755 529925103
                         </VARIABLE-DATA-PROTOTYPE>
                     </DATA-ELEMENTS>
                 </SENDER-RECEIVER-INTERFACE>
-                <SENDER-RECEIVER-INTERFACE UUID="423542c9-f78c-5d08-1a0d-ff6c3e005fab">
+                <SENDER-RECEIVER-INTERFACE UUID="6ccdb6d7-de34-5532-5f9d-39eaddd3b31c">
                     <SHORT-NAME>LeadLatOffset</SHORT-NAME>
                     <IS-SERVICE>false</IS-SERVICE>
                     <DATA-ELEMENTS>
-                        <VARIABLE-DATA-PROTOTYPE UUID="605ad92b-f5ec-5c1e-9dfe-10df26343291">
+                        <VARIABLE-DATA-PROTOTYPE UUID="baface59-e24a-51f1-f95d-01483e2efa45">
                             <SHORT-NAME>LeadLatOffset</SHORT-NAME>
                             <CATEGORY>VALUE</CATEGORY>
                             <SW-DATA-DEF-PROPS>
@@ -49,11 +49,11 @@ Model Checksum               : 3592363927 1264700273 2376944755 529925103
                         </VARIABLE-DATA-PROTOTYPE>
                     </DATA-ELEMENTS>
                 </SENDER-RECEIVER-INTERFACE>
-                <SENDER-RECEIVER-INTERFACE UUID="ffa80941-3c93-56b3-502c-4bc9db645939">
+                <SENDER-RECEIVER-INTERFACE UUID="f422d1be-ba65-5576-f009-a40a27c88ca0">
                     <SHORT-NAME>RelVelocity</SHORT-NAME>
                     <IS-SERVICE>false</IS-SERVICE>
                     <DATA-ELEMENTS>
-                        <VARIABLE-DATA-PROTOTYPE UUID="153534ae-2aa1-5780-e5ca-012f76c066d8">
+                        <VARIABLE-DATA-PROTOTYPE UUID="f76709df-8708-5477-9af9-33bb4d029494">
                             <SHORT-NAME>RelVelocity</SHORT-NAME>
                             <CATEGORY>VALUE</CATEGORY>
                             <SW-DATA-DEF-PROPS>
@@ -68,11 +68,11 @@ Model Checksum               : 3592363927 1264700273 2376944755 529925103
                         </VARIABLE-DATA-PROTOTYPE>
                     </DATA-ELEMENTS>
                 </SENDER-RECEIVER-INTERFACE>
-                <SENDER-RECEIVER-INTERFACE UUID="e2557103-71f7-54c9-0df4-3e4b0d6211c2">
+                <SENDER-RECEIVER-INTERFACE UUID="97f3e4b3-6cc6-5704-767a-9e590b596504">
                     <SHORT-NAME>EgoVelocity</SHORT-NAME>
                     <IS-SERVICE>false</IS-SERVICE>
                     <DATA-ELEMENTS>
-                        <VARIABLE-DATA-PROTOTYPE UUID="10c1b7c6-a544-5bcb-f822-1664f975d126">
+                        <VARIABLE-DATA-PROTOTYPE UUID="a99c8a0d-af1e-5f3c-f0aa-c019621e3c8d">
                             <SHORT-NAME>EgoVelocity</SHORT-NAME>
                             <CATEGORY>VALUE</CATEGORY>
                             <SW-DATA-DEF-PROPS>
@@ -87,11 +87,11 @@ Model Checksum               : 3592363927 1264700273 2376944755 529925103
                         </VARIABLE-DATA-PROTOTYPE>
                     </DATA-ELEMENTS>
                 </SENDER-RECEIVER-INTERFACE>
-                <SENDER-RECEIVER-INTERFACE UUID="99232597-b348-5193-49e2-d618bc848a77">
+                <SENDER-RECEIVER-INTERFACE UUID="79fa25fc-951e-5ad8-92da-1a181d49a37c">
                     <SHORT-NAME>AEBTrigger</SHORT-NAME>
                     <IS-SERVICE>false</IS-SERVICE>
                     <DATA-ELEMENTS>
-                        <VARIABLE-DATA-PROTOTYPE UUID="147ea1bd-c397-555b-e966-90f93aa3e480">
+                        <VARIABLE-DATA-PROTOTYPE UUID="365a0a26-97b7-562a-b869-dd85c4e9f07a">
                             <SHORT-NAME>AEBTrigger</SHORT-NAME>
                             <CATEGORY>VALUE</CATEGORY>
                             <SW-DATA-DEF-PROPS>
@@ -106,11 +106,11 @@ Model Checksum               : 3592363927 1264700273 2376944755 529925103
                         </VARIABLE-DATA-PROTOTYPE>
                     </DATA-ELEMENTS>
                 </SENDER-RECEIVER-INTERFACE>
-                <SENDER-RECEIVER-INTERFACE UUID="dc3d0c36-8e36-5f47-520b-31ddaf4b5c8f">
+                <SENDER-RECEIVER-INTERFACE UUID="fc7bc930-84c3-5e39-5489-81fcaeb79307">
                     <SHORT-NAME>Deceleration</SHORT-NAME>
                     <IS-SERVICE>false</IS-SERVICE>
                     <DATA-ELEMENTS>
-                        <VARIABLE-DATA-PROTOTYPE UUID="ac978f5e-28d4-5191-2a32-fac1e1a1bfe0">
+                        <VARIABLE-DATA-PROTOTYPE UUID="f27d625b-9223-56bf-02c0-8d44344ace0a">
                             <SHORT-NAME>Deceleration</SHORT-NAME>
                             <CATEGORY>VALUE</CATEGORY>
                             <SW-DATA-DEF-PROPS>

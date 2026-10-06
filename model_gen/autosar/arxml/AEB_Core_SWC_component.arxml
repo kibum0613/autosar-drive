@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 Auto generated XML Component Description for model AEB_Core_SWC
-Model version                : 1.1
+Model version                : 1.2
 Simulink Coder version       : Simulink Coder 25.2 (R2025b) 28-Jul-2025
-XML source code generated on : Tue Oct 06 14:57:29 2026
-Model Checksum               : 3592363927 1264700273 2376944755 529925103
+XML source code generated on : Tue Oct 06 17:07:38 2026
+Model Checksum               : 646894827 2852000462 222986189 1328096570
 -->
 <AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00052.xsd">
     <AR-PACKAGES>
         <AR-PACKAGE>
             <SHORT-NAME>Components</SHORT-NAME>
             <ELEMENTS>
-                <APPLICATION-SW-COMPONENT-TYPE UUID="611fec15-d3ad-5b66-8bb7-d2c2594f0797">
+                <APPLICATION-SW-COMPONENT-TYPE UUID="b32bac38-da6e-52e1-12c6-8d019b87096b">
                     <SHORT-NAME>AEB_Core_SWC</SHORT-NAME>
                     <PORTS>
-                        <R-PORT-PROTOTYPE UUID="01239c85-b8ee-5325-6d80-2eb9244ec1a5">
+                        <R-PORT-PROTOTYPE UUID="d3a30cc2-f8dc-5f69-6e1d-cc63811727a6">
                             <SHORT-NAME>RelDistance</SHORT-NAME>
                             <REQUIRED-COM-SPECS>
                                 <NONQUEUED-RECEIVER-COM-SPEC>
@@ -35,7 +35,7 @@ Model Checksum               : 3592363927 1264700273 2376944755 529925103
                             </REQUIRED-COM-SPECS>
                             <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/RelDistance</REQUIRED-INTERFACE-TREF>
                         </R-PORT-PROTOTYPE>
-                        <R-PORT-PROTOTYPE UUID="621d1d99-6fed-50ab-18d7-57cd75dc7b50">
+                        <R-PORT-PROTOTYPE UUID="c5363d89-6471-59bd-3e0f-6da55eac71e3">
                             <SHORT-NAME>LeadLatOffset</SHORT-NAME>
                             <REQUIRED-COM-SPECS>
                                 <NONQUEUED-RECEIVER-COM-SPEC>
@@ -56,7 +56,7 @@ Model Checksum               : 3592363927 1264700273 2376944755 529925103
                             </REQUIRED-COM-SPECS>
                             <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/LeadLatOffset</REQUIRED-INTERFACE-TREF>
                         </R-PORT-PROTOTYPE>
-                        <R-PORT-PROTOTYPE UUID="8c378e59-abbe-55a7-6ac8-c2d49a68ca2a">
+                        <R-PORT-PROTOTYPE UUID="1ecbdd4e-87ad-512d-dfac-31fd601f915f">
                             <SHORT-NAME>RelVelocity</SHORT-NAME>
                             <REQUIRED-COM-SPECS>
                                 <NONQUEUED-RECEIVER-COM-SPEC>
@@ -77,7 +77,7 @@ Model Checksum               : 3592363927 1264700273 2376944755 529925103
                             </REQUIRED-COM-SPECS>
                             <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/RelVelocity</REQUIRED-INTERFACE-TREF>
                         </R-PORT-PROTOTYPE>
-                        <R-PORT-PROTOTYPE UUID="e347fac3-20ef-5908-5e7d-73e7f7f5a61f">
+                        <R-PORT-PROTOTYPE UUID="4421c113-2b87-55e2-13ef-1f3063f6f2af">
                             <SHORT-NAME>EgoVelocity</SHORT-NAME>
                             <REQUIRED-COM-SPECS>
                                 <NONQUEUED-RECEIVER-COM-SPEC>
@@ -98,7 +98,7 @@ Model Checksum               : 3592363927 1264700273 2376944755 529925103
                             </REQUIRED-COM-SPECS>
                             <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/EgoVelocity</REQUIRED-INTERFACE-TREF>
                         </R-PORT-PROTOTYPE>
-                        <P-PORT-PROTOTYPE UUID="37542d51-7778-5305-a865-6915ee055fd2">
+                        <P-PORT-PROTOTYPE UUID="31a43ff4-0a3d-583e-f20f-085c6b1cefb3">
                             <SHORT-NAME>AEBTrigger</SHORT-NAME>
                             <PROVIDED-COM-SPECS>
                                 <NONQUEUED-SENDER-COM-SPEC>
@@ -115,7 +115,7 @@ Model Checksum               : 3592363927 1264700273 2376944755 529925103
                             </PROVIDED-COM-SPECS>
                             <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/AEBTrigger</PROVIDED-INTERFACE-TREF>
                         </P-PORT-PROTOTYPE>
-                        <P-PORT-PROTOTYPE UUID="4f9c84e3-2f04-5f62-efa2-0727d2fa7f45">
+                        <P-PORT-PROTOTYPE UUID="d6c3309a-f7a1-54f2-d24f-46b7ad73acf5">
                             <SHORT-NAME>Deceleration</SHORT-NAME>
                             <PROVIDED-COM-SPECS>
                                 <NONQUEUED-SENDER-COM-SPEC>
@@ -134,10 +134,10 @@ Model Checksum               : 3592363927 1264700273 2376944755 529925103
                         </P-PORT-PROTOTYPE>
                     </PORTS>
                     <INTERNAL-BEHAVIORS>
-                        <SWC-INTERNAL-BEHAVIOR UUID="293c229a-3e8a-5bd5-aed4-4dc8307632ac">
+                        <SWC-INTERNAL-BEHAVIOR UUID="bb2e5d15-9dac-5d29-28a1-5bcc30aaf021">
                             <SHORT-NAME>AEB_Core_SWC_IB</SHORT-NAME>
                             <EVENTS>
-                                <TIMING-EVENT UUID="ca2e5ffa-f3c9-54a8-4ce7-74c2f54824da">
+                                <TIMING-EVENT UUID="b0ce318e-1e60-5717-e730-a42fa07a31a3">
                                     <SHORT-NAME>Event_AEB_Core_SWC_Step</SHORT-NAME>
                                     <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/Components/AEB_Core_SWC/AEB_Core_SWC_IB/AEB_Core_SWC_Step</START-ON-EVENT-REF>
                                     <PERIOD>0.01</PERIOD>
@@ -145,18 +145,18 @@ Model Checksum               : 3592363927 1264700273 2376944755 529925103
                             </EVENTS>
                             <HANDLE-TERMINATION-AND-RESTART>NO-SUPPORT</HANDLE-TERMINATION-AND-RESTART>
                             <RUNNABLES>
-                                <RUNNABLE-ENTITY UUID="6cbc93cc-a275-53d5-4e3d-a154739135dc">
+                                <RUNNABLE-ENTITY UUID="b2014ae2-4305-5dfe-b3de-08c8bcbf2685">
                                     <SHORT-NAME>AEB_Core_SWC_Init</SHORT-NAME>
                                     <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
                                     <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
                                     <SYMBOL>AEB_Core_SWC_Init</SYMBOL>
                                 </RUNNABLE-ENTITY>
-                                <RUNNABLE-ENTITY UUID="72fe2d0d-c2c7-565f-d8c0-e39cf3c63e2e">
+                                <RUNNABLE-ENTITY UUID="a8923895-c9f2-5c7c-0200-09d76df1e826">
                                     <SHORT-NAME>AEB_Core_SWC_Step</SHORT-NAME>
                                     <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
                                     <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
                                     <DATA-READ-ACCESSS>
-                                        <VARIABLE-ACCESS UUID="2e9bca4d-585e-5b35-5241-8c647c701f0a">
+                                        <VARIABLE-ACCESS UUID="9e8721fc-ea1e-53c0-762e-fbcbbc2a42c3">
                                             <SHORT-NAME>IN_EgoVelocity_EgoVelocity</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
@@ -165,7 +165,7 @@ Model Checksum               : 3592363927 1264700273 2376944755 529925103
                                                 </AUTOSAR-VARIABLE-IREF>
                                             </ACCESSED-VARIABLE>
                                         </VARIABLE-ACCESS>
-                                        <VARIABLE-ACCESS UUID="5502cf10-696a-5743-0b6e-7a59975a2be3">
+                                        <VARIABLE-ACCESS UUID="901fc0e8-b4e0-5a65-a76e-53a4474f88d6">
                                             <SHORT-NAME>IN_LeadLatOffset_LeadLatOffset</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
@@ -174,7 +174,7 @@ Model Checksum               : 3592363927 1264700273 2376944755 529925103
                                                 </AUTOSAR-VARIABLE-IREF>
                                             </ACCESSED-VARIABLE>
                                         </VARIABLE-ACCESS>
-                                        <VARIABLE-ACCESS UUID="c0079aae-2ed6-5b79-8d92-7a81893607cc">
+                                        <VARIABLE-ACCESS UUID="e2f80f5a-b1f8-572d-2a76-bb81d35051fc">
                                             <SHORT-NAME>IN_RelDistance_RelDistance</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
@@ -183,7 +183,7 @@ Model Checksum               : 3592363927 1264700273 2376944755 529925103
                                                 </AUTOSAR-VARIABLE-IREF>
                                             </ACCESSED-VARIABLE>
                                         </VARIABLE-ACCESS>
-                                        <VARIABLE-ACCESS UUID="bc146e62-b82a-5e12-17a3-d1fac24fc7c0">
+                                        <VARIABLE-ACCESS UUID="59cea151-fcd5-5c4f-dbbf-0a51dbc77157">
                                             <SHORT-NAME>IN_RelVelocity_RelVelocity</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
@@ -194,7 +194,7 @@ Model Checksum               : 3592363927 1264700273 2376944755 529925103
                                         </VARIABLE-ACCESS>
                                     </DATA-READ-ACCESSS>
                                     <DATA-WRITE-ACCESSS>
-                                        <VARIABLE-ACCESS UUID="a7890021-559b-5d2a-7d0c-cc3b4adff5c5">
+                                        <VARIABLE-ACCESS UUID="4ca9b8b0-3881-513f-fe4d-71945b95725a">
                                             <SHORT-NAME>OUT_AEBTrigger_AEBTrigger</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
@@ -203,7 +203,7 @@ Model Checksum               : 3592363927 1264700273 2376944755 529925103
                                                 </AUTOSAR-VARIABLE-IREF>
                                             </ACCESSED-VARIABLE>
                                         </VARIABLE-ACCESS>
-                                        <VARIABLE-ACCESS UUID="c6087b82-103c-52a6-40d0-7daac64168b4">
+                                        <VARIABLE-ACCESS UUID="d104a05e-f79c-5284-4ad2-d68e76282faa">
                                             <SHORT-NAME>OUT_Deceleration_Deceleration</SHORT-NAME>
                                             <ACCESSED-VARIABLE>
                                                 <AUTOSAR-VARIABLE-IREF>
