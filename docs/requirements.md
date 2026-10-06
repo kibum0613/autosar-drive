@@ -15,7 +15,7 @@ Stateflow 차트(AEBLogic)와 블록 구성을 읽고 SWC가 지켜야 할 동�
 | REQ-08 | 인접 차로 선행차(y ≤ -3.1 m)에는 AEBTrigger 0 | Switch "Check the lane" | t_no_trigger_adjacent_lane | PASS |
 | REQ-09 | 인접 차로 선행차에는 Deceleration도 0 | Switch "Check the lane (decel)" (AEB-12로 추가) | t_no_decel_adjacent_lane | PASS |
 | REQ-10 | Step 러너블은 매 주기 출력 포트 2개를 모두 기록 | Outport 2개 | t_every_step_writes_both_ports | PASS |
-| REQ-11 | 옆 차로에서 끼어든(cut-in) 선행차에도 FCW가 제동보다 먼저 나감 | (모델에 없음) | t_cut_in_fcw_before_braking | XFAIL · AEB-13 |
+| REQ-11 | 옆 차로에서 끼어든(cut-in) 선행차에는 진입 첫 주기에 그때 TTC에 맞는 단계로 바로 대응 | 상태도 단계 임계값 | t_cut_in_responds_at_ttc_stage | PASS (AEB-13 검토로 요구사항 수정) |
 
 ## Back-to-Back 테스트
 
@@ -35,8 +35,10 @@ Stateflow 차트(AEBLogic)와 블록 구성을 읽고 SWC가 지켜야 할 동�
 - 수정: Deceleration 경로에도 같은 조건의 Switch "Check the lane (decel)"을 넣고 AUTOSAR 코드를 다시 생성했습니다. 수정 전 모델은 `AEB_Core_SWC_before_AEB12.slx`로 남겼습니다.
 - 확인: REQ-09 XFAIL → PASS, 나머지 요구사항과 B2B 시나리오는 그대로 통과합니다.
 
-## AEB-13 (REQ-11) · 열린 이슈
+## AEB-13 (REQ-11) · 요구사항 수정으로 종료
 
-- AEB-12 수정 뒤 끼어들기 상황을 시험하다 발견했습니다.
-- 상태도는 선행차가 옆 차로에 있어도 TTC만 보고 단계를 올립니다. 그래서 선행차가 t = 3 s에 끼어드는 순간 AEBTrigger 1과 감속 -5.3 m/s²가 동시에 나가고 FCW 경고 단계가 없습니다.
-- 조치 후보: 차선 조건을 상태도 입력으로 넣어 차로 밖이면 Default로 돌아가게 하기.
+- 처음 요구사항: "끼어든 선행차에도 FCW가 제동보다 먼저 나간다" (REQ-03을 끼어들기에 그대로 적용)
+- 시험 결과: 선행차가 t = 3 s에 끼어드는 순간 경고와 -5.3 m/s² 제동이 동시에 나가고 FCW만 나가는 주기가 없었습니다.
+- 검토: 그 순간 TTC는 (75 − 3.7) / 25 = 2.85 s로 이미 PB1(6.66 s)·PB2(4.80 s) 기준 아래이고 FB(2.63 s) 기준 위입니다. TTC 로직대로라면 PB2 제동이 맞습니다. FCW 단계를 따로 끼우면 TTC가 줄어드는 중에 제동만 늦어집니다.
+- 결론: 코드는 그대로 두고 요구사항을 "끼어든 첫 주기에 TTC에 맞는 단계로 대응"으로 바꿨습니다. FCW 선행(REQ-03)은 같은 차로에서 서서히 다가가는 경우에 적용합니다.
+- 남는 점: 상태도는 선행차가 차로 밖에 있을 때도 TTC로 단계를 올려 둡니다. 출력은 Switch로 막히지만 내부 상태와 출력이 다른 구간이 생기므로 로그를 해석할 때 주의해야 합니다.

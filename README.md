@@ -23,7 +23,9 @@ platform/                   호스트 빌드용 최소 Platform_Types / Std_Type
 test/rte_test_double.c      RTE 역할을 대신하는 테스트 더블 (IRead 값 주입, IWrite 값 기록)
 test/test_swc_unit.c        요구사항 기반 단위 테스트 11개
 test/test_b2b.c             ERT 코드 vs AUTOSAR 코드 Back-to-Back 테스트 6개
-docs/requirements.md        요구사항 ↔ 테스트 추적표
+docs/requirements.md        요구사항 ↔ 테스트 추적표, AEB-12·13 기록
+docs/ert_vs_autosar.md      일반 C 코드와 AUTOSAR 코드 비교
+docs/autosar_concepts.md    Classic AUTOSAR 개념 정리 (이 저장소 예시 기준)
 jenkins/                    gcc·cppcheck가 들어간 Jenkins 이미지
 Jenkinsfile                 파이프라인 정의
 ```
@@ -49,9 +51,14 @@ http://localhost:8080 에서 Pipeline 잡을 만들고 "Pipeline script from SCM
 
 - 빌드: 경고 0 (-Werror)
 - cppcheck(warning, style, performance, portability): 지적 0
-- 단위 테스트: 11개 중 10 PASS, 1 XFAIL(AEB-13, 끼어들기 시 FCW 없이 제동)
+- 단위 테스트: 11개 모두 PASS
 - Back-to-Back: 5개 시나리오 최대 오차 0 + 인접 차로 시나리오는 AEB-12 의도 차이 확인
-- 테스트로 찾은 AEB-12(인접 차로 선행차에 감속 명령)는 모델 수정 → 코드 재생성 → CI 재검증으로 닫았습니다 (docs/requirements.md)
+- 테스트로 찾은 AEB-12(인접 차로 선행차에 감속 명령)는 모델 수정 → 코드 재생성 → CI 재검증으로 닫았습니다
+- AEB-13(끼어들기 시 FCW 없이 제동)은 TTC 계산으로 검토한 결과 요구사항 쪽을 고쳐 닫았습니다 (docs/requirements.md)
+
+| 파이프라인 단계 | 테스트 결과 |
+|---|---|
+| ![stages](docs/img/jenkins_pipeline_stages.jpg) | ![tests](docs/img/jenkins3_unit_tests.jpg) |
 
 ## 범위와 한계
 
