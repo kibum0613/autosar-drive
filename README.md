@@ -60,6 +60,8 @@ http://localhost:8080 에서 Pipeline 잡을 만들고 "Pipeline script from SCM
 |---|---|
 | ![stages](docs/img/jenkins_pipeline_stages.jpg) | ![tests](docs/img/jenkins3_unit_tests.jpg) |
 
+![build trend 1-4](docs/img/jenkins4_all_pass.jpg)
+
 ## 범위와 한계
 
 - 원본 AEB 모델은 강의 실습 모델이고 입력 포트 재설계와 SWC 구성, 테스트 코드는 직접 작성했습니다.
